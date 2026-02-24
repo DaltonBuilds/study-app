@@ -1,5 +1,6 @@
 {
-  "build": {
+"name": "DevOps Study App",
+"build": {
     "context": "..",
     "dockerfile": "Dockerfile"
   },
@@ -7,8 +8,13 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
+  "workspaceMount": "",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "runArgs": [
+        "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
+    ],
   "forwardPorts": [
-    "22111",
-    "22112"
+    22111,
+    22112
   ]
 }

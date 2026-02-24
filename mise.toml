@@ -1,7 +1,10 @@
 [tools]
+pipx = "latest"
+"pipx:commitizen-tools/commitizen" = "latest"
 pre-commit = "latest"
 python = "3.13"
 uv = "latest"
+vim = "latest"
 
 [settings]
 python.uv_venv_auto = true
