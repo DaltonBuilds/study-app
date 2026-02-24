@@ -1,14 +1,13 @@
 [tools]
-gh = "latest"
-pipx = "latest"
-"pipx:commitizen-tools/commitizen" = "latest"
-pre-commit = "latest"
 python = "3.13"
 uv = "latest"
+"pipx:commitizen-tools/commitizen" = "latest"
+pre-commit = "latest"
+gh = "latest"
 vim = "latest"
 
 [settings]
-python.uv_venv_auto = true
+python.uv_venv_auto = "create|source"
 idiomatic_version_file_enable_tools = ["python"]
 experimental = true
 
