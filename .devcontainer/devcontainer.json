@@ -1,20 +1,23 @@
 {
-"name": "DevOps Study App",
-"build": {
+  "name": "DevOps Study App",
+  "build": {
     "context": "..",
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
   },
   "postCreateCommand": "scripts/setup",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+  },
+  "remoteEnv": {
+    "DOCKER_HOST": "unix:///run/user/1000/docker.sock",
   },
   "workspaceMount": "",
-    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-    "runArgs": [
-        "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
-    ],
-  "forwardPorts": [
-    22111,
-    22112
-  ]
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "runArgs": [
+    "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z",
+  ],
+  "mounts": [
+    "source=/run/user/1000/docker.sock,target=/run/user/1000/docker.sock,type=bind",
+  ],
+  "forwardPorts": [22111, 22112],
 }
