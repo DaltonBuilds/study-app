@@ -1,4 +1,5 @@
 [tools]
+gh = "latest"
 pipx = "latest"
 "pipx:commitizen-tools/commitizen" = "latest"
 pre-commit = "latest"
