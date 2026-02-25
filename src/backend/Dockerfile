@@ -19,8 +19,16 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 FROM python:3.13-alpine
 
+RUN addgroup -S -g 1000 app && adduser -S -u 1000 -G app app
+
 # Copy environment but not the source code
 COPY --from=builder --chown=app:app /app/.venv /app/.venv
+
+# Switch to non-root user
+USER app
+
+# Expose correct port
+EXPOSE 22112
 
 # Run the application
 CMD ["/app/.venv/bin/study-tracker-api"]
