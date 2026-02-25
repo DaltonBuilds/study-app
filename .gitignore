@@ -1,9 +1,13 @@
 ### AI Agents ###
-#Claude
+# Claude
 .claude/
 
 ### DevPod ###
 .devpod-internal/
+
+### Misc ###
+# Temp project data
+**/data/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
