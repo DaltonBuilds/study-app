@@ -11,6 +11,9 @@
     22111,
     22112
   ],
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached,readonly"
+  ],
   "remoteEnv": {
     "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}",
     "MISE_TRUSTED_CONFIG_PATHS": "/workspaces/study-app"
