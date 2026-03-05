@@ -5,3 +5,7 @@ sudo update-alternatives --set iptables /usr/sbin/iptables-nft
 sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-nft
 
 /usr/local/bin/mise trust && /usr/local/bin/mise install
+
+# Install git hooks (idempotent; safe for both DevPod and devcontainer)
+pre-commit install
+pre-commit install --hook-type commit-msg

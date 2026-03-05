@@ -16,6 +16,7 @@
   ],
   "remoteEnv": {
     "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}",
-    "MISE_TRUSTED_CONFIG_PATHS": "/workspaces/study-app"
+    "MISE_TRUSTED_CONFIG_PATHS": "/workspaces/study-app",
+    "DEVCONTAINER": "1"
   }
 }
