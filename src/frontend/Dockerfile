@@ -24,4 +24,4 @@ USER app
 
 EXPOSE 22111
 
-CMD ["/app/.venv/bin/study-app-frontend"]
+CMD ["/app/.venv/bin/frontend"]
