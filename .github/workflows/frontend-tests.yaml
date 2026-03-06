@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Tests with Coverage
         run: |
-          uv run pytest tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80
+          uv run pytest tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80 --junitxml=junit.xml
 
       - name: Upload Coverage Report
         uses: actions/upload-artifact@v4
@@ -82,7 +82,8 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - name: Upload Artifacts
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: ./test-results
+          path: ./src/frontend/junit.xml
