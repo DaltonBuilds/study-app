@@ -2,6 +2,8 @@
 
 mise install -y
 
-# Install git hooks
-pre-commit install
-pre-commit install --hook-type commit-msg
+# Install git hooks (only if pre-commit was successfully installed)
+if command -v pre-commit &>/dev/null; then
+  pre-commit install
+  pre-commit install --hook-type commit-msg
+fi
