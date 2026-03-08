@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# Host kernel (Fedora 43+) uses nftables; Docker-in-Docker needs the nft backend
-sudo update-alternatives --set iptables /usr/sbin/iptables-nft
-sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-nft
+mise install -y
 
-/usr/local/bin/mise trust && /usr/local/bin/mise install
-
-# Install git hooks (idempotent; safe for both DevPod and devcontainer)
+# Install git hooks
 pre-commit install
 pre-commit install --hook-type commit-msg
