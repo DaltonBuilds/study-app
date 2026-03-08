@@ -1,8 +1,8 @@
 [tools]
-python = "3.13"
+python = "3.13.11"
 uv = "latest"
 "pipx:commitizen-tools/commitizen" = "latest"
-pre-commit = "latest"
+"pipx:pre-commit/pre-commit" = "latest"
 gh = "latest"
 vim = "latest"
 ruff = "latest"
